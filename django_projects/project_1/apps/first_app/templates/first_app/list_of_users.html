@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>usrs_list</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Full Name</th>
+
+        </tr>
+        <tbody>
+            <td>
+                {{request.session.fname}}
+                {{request.session.lname}}
+
+            </td>
+            <td>
+                    {{request.session.description}}
+                </td>
+                <div>
+                    <h2>You have visited this site {{request.session.counter}} times</h2>
+                    
+                    <a href="/back">Back</a>
+                    
+                </div>
+                
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
+    
+    <!-- <h1>This assignemnt is for random word generator</h1> -->
+    <!-- <h2>the random word is {{request.session.random}}</h2> -->
+        <!-- <a href="/generate">Generate</a> -->

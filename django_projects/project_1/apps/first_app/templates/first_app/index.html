@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test_page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'first_app/css/style.css' %}">
+</head>
+<body>
+    <h1>hello world</h1>
+    <p>{{first_nametohtml}}</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>forms</title>
+</head>
+<body>
+    <div>
+        <form action="/field" method="post">
+        {% csrf_token %}
+            <label for="fname">Enter your First name</label>
+            <input type="text" id="name" name="namekey" placeholder="enter your first name">
+            <label for="lname">Enter your First name</label>
+            <input type="text" id="name" name="last_name" placeholder="enter your last name">
+            <label for="description">description of your blog</label>
+            <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+            <label for="list">Please choose your favourite language
+            </label>
+            <input type="submit" value="Submit">
+            <!-- <a href="/field">Submit</a> -->
+
+        <!-- <button type = "submit"> Submit</button> -->
+    </form>
+
+    </div>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- #### this is for the time display -->
+    <!-- <h1>This is an example for the time display</h1>
+    <h3>{{current_time_display}}</h3> -->
+<!-- #### this is for the time display -->
+
+<!-- When you go to the URL localhost:8000 or localhost:8000/time_display/ 
+    this should run the index() method in your controller file, (views.py).
+     Have that method render a template that displays the current date and time. 
+    &&^&^&^&^&^&^&^&^ as seen above we can have different url (the one in urls.py to say a particular name and yet go to a different function-->
+    <!-- <form action="/list" method="post">
+        {% csrf_token %}
+        <label for="name">Name of your blog</label>
+        <input type="text" id="name" name="namekey" placeholder="enter your blog name">
+        <label for="description">description of your blog</label>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+        <button type = "submit"> Submit</button>
+    </form> -->
+    <!-- &&&&&&&&&&&&&&&&&&&&&&&&  above form was for example purposes only -->

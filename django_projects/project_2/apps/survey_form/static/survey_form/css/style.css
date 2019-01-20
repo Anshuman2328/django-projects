@@ -1,0 +1,8 @@
+main {
+    width: 970px;
+    height: 1000px;
+    background-color: red;
+    color: red;
+    border: solid;
+    border-color: black;
+}

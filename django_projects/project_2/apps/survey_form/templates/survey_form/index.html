@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey_form/css/style.css' %}">
+    <title>Survey_form</title>
+</head>
+<style>
+.formSubmitButton {
+    background: transparent;
+    border: 2px solid black;
+
+}
+
+.formSubmitButton:hover, .formSubmitButton:focus {
+    box-shadow: 0 0 8 0 dodgerblue;
+    border: 2px solid dodgerblue;
+}
+
+
+
+</style>
+<body>
+    <div class = "container">
+        <div class = left>
+            <h1 class="flow-text">This is the assignment for the survey form</h1>
+            <h2 class="flow-text">Please type a word of your choice</h2>
+            <form action="/field" method="post">
+                {% csrf_token %}
+                    <label for="word">Enter any word of your choice</label>
+                    <input type="text" id="name" name="word" placeholder="please enter a word">
+                    <h2>Please choose a color of your choice from below</h2>
+                    <input type="radio" name = "color"class="with-gap" value = "Red">Red<br>
+                    <input type="radio" name = "color" class="with-gap"value = "Green">Green<br>
+                    <input type="radio" name = "color" class="with-gap"value = "Yellow">Yellow<br>
+                    <input type="radio" name = "color" class="with-gap"value = "Blue">Blue<br>
+                    <input type="radio" name = "color" class="with-gap"value = "Orange">Orange<br>
+                    <input type="radio" name = "color" class="with-gap"value = "Black">Black<br>
+                    <h2><label for="large">Would you like to see these in large font, check the box below</label></h2>
+                    <input type="checkbox" name="large_font" value = 1><br>
+                    <input type="hidden" name="large_font" value = 0><br>
+                    <input type="submit" value="Add to Session" class="formSubmitButton"><br>
+                </form>
+    <a href="/clear">Clear Session</a>            </div>
+
+
+
+
+
+
+
+
+        <div class = right>
+            <h1 class="flow-text">Your Selection can be seen below</h1>
+            {% for i in request.session.my_dictionary  %}
+            <h1 style="color:{{i.color}} " font-size = "2em" > {{i.test}}</h1>
+            {% endfor %}
+            <!-- {{request.session.color}} -->
+        </div>
+        <!-- <div class="card-panel">
+            <span class="blue-text text-darken-2">This is a card panel with dark blue text</span>
+          </div> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
